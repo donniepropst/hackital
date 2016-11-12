@@ -1,4 +1,8 @@
-angular.module('hackital', ['ionic', 'hackital.home'])
+angular.module('hackital', [
+    'ionic',
+    'ngCordova',
+    'hackital.home'
+  ])
 
 .run(function($ionicPlatform, $state) {
   console.log('run');
