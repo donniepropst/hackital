@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
@@ -16,11 +16,24 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="./lib/ngCordova/dist/ng-cordova.js"></script>
     <script src="cordova.js"></script>
+ <script async defer
+ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaybJwHY0aNmOeDcwEprWsCAdPUv7ycxU">
+ </script>
+
+ <script src="lib/moment/moment.js"></script>
+<script src="lib/angular-moment/angular-moment.js"></script>
 
     <!-- your app's js -->
     <script src="components/home/home.module.js"></script>
     <script src="components/home/home.state.js"></script>
     <script src="components/home/home.controller.js"></script>
+    <script src="components/mapPage/mapPage.module.js"></script>
+    <script src="components/mapPage/mapPage.state.js"></script>
+    <script src="components/mapPage/locationService.service.js"></script>
+    <script src="components/mapPage/mapPage.controller.js"></script>
+    <script src="components/mapPage/locationData.service.js"></script>
+    <script src="components/core/core.module.js"></script>
+    <script src="components/core/ruleService.service.js"></script>
     <script src="app.js"></script>
   </head>
   <body ng-app="hackital">

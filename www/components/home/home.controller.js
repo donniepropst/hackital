@@ -1,9 +1,9 @@
 (function(){
     'use strict';
     angular.module('hackital.home')
-    .controller('HomeController', ['$cordovaGeolocation', HomeController]);
+    .controller('HomeController', ['$cordovaGeolocation', '$state','LocationService','LocationData', HomeController]);
 
-     function HomeController($cordovaGeolocation){
+     function HomeController($cordovaGeolocation, $state, LocationService, LocationData){
        var vm = this;
        vm.message = "tired";
        vm.getLocation = getLocation;
@@ -14,8 +14,10 @@
            var lat  = position.coords.latitude;
            var long = position.coords.longitude;
            console.log(lat, long);
+           LocationService.set(lat, long);
+           
+           $state.go('map');
          }, function(err) {
-           // error
          });
        }
        }

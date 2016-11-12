@@ -1,9 +1,9 @@
 (function(){
     'use strict';
-    angular.module('hackital.mapPage')
+    angular.module('hackital.map')
     .config(function($stateProvider){
         $stateProvider
-            .state('mapPage', {
+            .state('map', {
                 controller: 'MapPageController',
                 controllerAs: 'mapPageCtrl',
                 url: '/mapPage',
