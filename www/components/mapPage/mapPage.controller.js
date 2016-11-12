@@ -12,11 +12,11 @@
         var rule
 
         LocationData.getData(location.lat, location.long).then(function(result){
-            if(result.data.rules[0]){
+            if(result.data.rules && result.data.rules[0]){
                 RuleService.findRule(result.data.rules[0].restrictions);
             }
 
-            address = result.data.blockNumber + " " + result.data.streetName;
+            address = (result.data.blockNumber || '') + " " + result.data.streetName;
             initMap();
         });
 
