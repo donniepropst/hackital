@@ -1,24 +1,31 @@
 (function(){
     'use strict';
     angular.module('hackital.map')
-    .controller('MapPageController', ['LocationService', 'LocationData','RuleService', MapPageController]);
+    .controller('MapPageController', ['LocationService', 'LocationData','RuleService','$ionicLoading', MapPageController]);
 
 
 
-    function MapPageController(LocationService, LocationData, RuleService){
+    function MapPageController(LocationService, LocationData, RuleService,$ionicLoading){
         var vm = this;
         var location = LocationService.get();
         var address;
         var rule
 
-        LocationData.getData(location.lat, location.long).then(function(result){
-            if(result.data.rules[0]){
-                RuleService.findRule(result.data.rules[0].restrictions);
-            }
+        $ionicLoading.show({
+             template: '<ion-spinner class="spinner-energized" icon="ripple"></ion-spinner>'
+           }).then(function(){
+               LocationData.getData(location.lat, location.long).then(function(result){
+                   if(result.data.rules && result.data.rules[0]){
+                       RuleService.findRule(result.data.rules[0].restrictions);
+                   }
+                   address = (result.data.blockNumber || '') + " " + result.data.streetName;
+                   initMap();
+                   $ionicLoading.hide().then(function(result){
 
-            address = result.data.blockNumber + " " + result.data.streetName;
-            initMap();
-        });
+                   });
+               });
+           });
+
 
         function initMap() {
             var uluru = {lat: location.lat, lng: location.long};

@@ -13,9 +13,8 @@
          $cordovaGeolocation.getCurrentPosition(posOptions).then(function (position) {
            var lat  = position.coords.latitude;
            var long = position.coords.longitude;
-           console.log(lat, long);
            LocationService.set(lat, long);
-           
+
            $state.go('map');
          }, function(err) {
          });
