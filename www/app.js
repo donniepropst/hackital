@@ -1,4 +1,11 @@
-angular.module('hackital', ['ionic', 'hackital.home'])
+angular.module('hackital', [
+    'ionic',
+    'ngCordova',
+    'hackital.home',
+    'hackital.map',
+    'hackital.core',
+    'angularMoment'
+  ])
 
 .run(function($ionicPlatform, $state) {
   console.log('run');
