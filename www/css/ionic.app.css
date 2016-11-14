@@ -9829,7 +9829,7 @@ a.button {
 #map {
   min-height: 100vh; }
 
-#iw-container .iw-title {
+#iw-container .iw-title-safe {
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 15px;
   font-weight: 300;
@@ -9840,8 +9840,36 @@ a.button {
   border-radius: 2px 2px 0 0;
   /* In accordance with the rounding of the default infowindow corners. */ }
 
+#iw-container .iw-title-not-safe {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 10px;
+  background-color: #D9534F;
+  color: white;
+  margin: 1px;
+  border-radius: 2px 2px 0 0;
+  /* In accordance with the rounding of the default infowindow corners. */ }
+
+#iw-container .iw-title-no-data {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 10px;
+  background-color: #F0AD4E;
+  color: white;
+  margin: -1px;
+  border-radius: 2px 2px 0 0;
+  /* In accordance with the rounding of the default infowindow corners. */ }
+
 .gm-style-iw {
-  width: 500px !important;
+  width: 90% !important;
   top: 0 !important;
   left: 0 !important;
   border-radius: 2px 2px 0 0; }
+
+.gm-style-iw + div {
+  display: none; }
+
+.center-text {
+  text-align: center; }

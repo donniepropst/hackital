@@ -5,7 +5,6 @@
 
      function HomeController($cordovaGeolocation, $state, LocationService, LocationData){
        var vm = this;
-       vm.message = "tired";
        vm.getLocation = getLocation;
        var posOptions = {timeout: 10000, enableHighAccuracy: false};
 
